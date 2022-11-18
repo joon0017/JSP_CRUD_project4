@@ -2,6 +2,7 @@
 <%@ page import="java.io.File" %>
 <%@ page import="com.oreilly.servlet.MultipartRequest" %>
 <%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
+<%@ page import="com.crud.common.FileUpload" %>
 
 <!DOCTYPE html>
 <html>
@@ -16,7 +17,7 @@
     int sizeLimit = 15 * 1024 * 1024; // 15MB
 
     //저장 경로
-    String realPath = request.getServletContext().getRealPath("/upload");
+    String realPath = request.getSession().getServletContext().getRealPath("upload");
 
     //저장 경로 없을 시 생성
     File dir = new File(realPath);
@@ -38,7 +39,6 @@
     <img src="${pageContext.request.contextPath}/upload/<%=filename%>"><br>
 
     파일명 : <%=filename%> <br>
-
     </p>
 </body>
 </html>

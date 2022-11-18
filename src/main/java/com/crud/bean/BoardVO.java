@@ -1,5 +1,6 @@
 package com.crud.bean;
 
+import java.io.File;
 import java.util.Date;
 
 public class BoardVO {
@@ -10,6 +11,18 @@ public class BoardVO {
 	private String content;
 	private Date regdate;
 	private int cnt;
+	private String photo;
+	private File file;
+
+	public File getFile(){return file;}
+	public void setFile(String filename){
+		this.file = new File("upload/"+filename);
+	}
+
+	public String getFilename(){return photo;}
+	public void setFilename(String photo){
+		this.photo = photo;
+	}
 
 	public String getCategory(){
 		return category;
