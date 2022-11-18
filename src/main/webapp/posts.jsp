@@ -62,7 +62,7 @@
 	<tr>
 		<td>${u.getSeq()}</td>
 		<td>${u.getCategory()}</td>
-		<td><img class="showPhoto" src="upload/${u.getFilename()}"/></td>
+		<td><img class="showPhoto" src="upload/${u.getPhoto()}"/></td>
 		<td>${u.getTitle()}</td>
 		<td>${u.getWriter()}</td>
 		<td>${u.getContent()}</td>

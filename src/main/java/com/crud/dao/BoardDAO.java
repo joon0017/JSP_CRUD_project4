@@ -26,9 +26,10 @@ public class BoardDAO {
 			conn = JDBCUtil.getConnection();
 			stmt = conn.prepareStatement(BOARD_INSERT);
 			stmt.setString(1,vo.getCategory());
-			stmt.setString(2, vo.getTitle());
-			stmt.setString(3, vo.getWriter());
-			stmt.setString(4, vo.getContent());
+			stmt.setString(2,vo.getPhoto());
+			stmt.setString(3, vo.getTitle());
+			stmt.setString(4, vo.getWriter());
+			stmt.setString(5, vo.getContent());
 			stmt.executeUpdate();
 			return 1;
 		} catch (Exception e) {
@@ -55,7 +56,7 @@ public class BoardDAO {
 			conn = JDBCUtil.getConnection();
 			stmt = conn.prepareStatement(BOARD_UPDATE);
 			stmt.setString(1, vo.getCategory());
-			stmt.setString(2, vo.getFilename());
+			stmt.setString(2, vo.getPhoto());
 			stmt.setString(3, vo.getTitle());
 			stmt.setString(4, vo.getWriter());
 			stmt.setString(5, vo.getContent());
@@ -83,7 +84,7 @@ public class BoardDAO {
 			if(rs.next()) {
 				one.setSeq(rs.getInt("seq"));
 				one.setCategory(rs.getString("category"));
-				one.setFilename(rs.getString("photo"));
+				one.setPhoto(rs.getString("photo"));
 				one.setTitle(rs.getString("title"));
 				one.setWriter(rs.getString("writer"));
 				one.setContent(rs.getString("content"));
@@ -107,7 +108,7 @@ public class BoardDAO {
 				BoardVO one = new BoardVO();
 				one.setSeq(rs.getInt("seq"));
 				one.setCategory(rs.getString("category"));
-				one.setFilename(rs.getString("photo"));
+				one.setPhoto(rs.getString("photo"));
 				one.setTitle(rs.getString("title"));
 				one.setWriter(rs.getString("writer"));
 				one.setContent(rs.getString("content"));

@@ -12,15 +12,15 @@ public class BoardVO {
 	private Date regdate;
 	private int cnt;
 	private String photo;
-	private File file;
+//	private File file;
+//
+//	public File getFile(){return file;}
+//	public void setFile(String filename){
+//		this.file = new File("upload/"+filename);
+//	}
 
-	public File getFile(){return file;}
-	public void setFile(String filename){
-		this.file = new File("upload/"+filename);
-	}
-
-	public String getFilename(){return photo;}
-	public void setFilename(String photo){
+	public String getPhoto(){return photo;}
+	public void setPhoto(String photo){
 		this.photo = photo;
 	}
 

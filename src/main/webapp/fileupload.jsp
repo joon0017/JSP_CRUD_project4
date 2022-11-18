@@ -17,7 +17,7 @@
     int sizeLimit = 15 * 1024 * 1024; // 15MB
 
     //저장 경로
-    String realPath = request.getSession().getServletContext().getRealPath("upload");
+    String realPath = request.getServletContext().getRealPath("upload");
 
     //저장 경로 없을 시 생성
     File dir = new File(realPath);
@@ -27,9 +27,8 @@
 
     //업로드 처리 과정
 
-    MultipartRequest multipartRequest = new MultipartRequest(request, realPath, sizeLimit, "UTF-8", new DefaultFileRenamePolicy());
-
-    filename = multipartRequest.getFilesystemName("photo");
+        MultipartRequest multipartRequest = new MultipartRequest(request, realPath, sizeLimit, "UTF-8", new DefaultFileRenamePolicy());
+        filename= multipartRequest.getFilesystemName("photo");
     %>
 
     <h1>파일 업로드 결과</h1>

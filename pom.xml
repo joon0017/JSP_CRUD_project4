@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>BoardCRUD</artifactId>
+    <artifactId>JSPBoard</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>BoardCRUD</name>
+    <name>JSPBoard</name>
     <packaging>war</packaging>
 
     <properties>
@@ -18,13 +18,6 @@
     </properties>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/javax.servlet/jsp-api -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jsp-api</artifactId>
-            <version>2.0</version>
-            <scope>provided</scope>
-        </dependency>
 
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
@@ -33,9 +26,9 @@
             <version>8.0.28</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/jstl/jstl -->
+        <!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
         <dependency>
-            <groupId>jstl</groupId>
+            <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
@@ -45,6 +38,14 @@
             <groupId>servlets.com</groupId>
             <artifactId>cos</artifactId>
             <version>05Nov2002</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/javax.servlet/jsp-api -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.0</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -65,6 +66,8 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+
     </dependencies>
 
     <build>
