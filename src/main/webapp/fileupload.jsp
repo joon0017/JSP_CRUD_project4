@@ -17,7 +17,7 @@
     int sizeLimit = 15 * 1024 * 1024; // 15MB
 
     //저장 경로
-    String realPath = request.getServletContext().getRealPath("upload");
+    String realPath = request.getSession().getServletContext().getRealPath("upload");
 
     //저장 경로 없을 시 생성
     File dir = new File(realPath);
