@@ -12,6 +12,7 @@ public class BoardVO {
 	private Date regdate;
 	private int cnt;
 	private String photo;
+	private Date editDate;
 //	private File file;
 //
 //	public File getFile(){return file;}
@@ -19,6 +20,10 @@ public class BoardVO {
 //		this.file = new File("upload/"+filename);
 //	}
 
+	public Date getEditDate(){return editDate;}
+	public void setEditDate(Date editDate){
+		this.editDate = editDate;
+	}
 	public String getPhoto(){return photo;}
 	public void setPhoto(String photo){
 		this.photo = photo;

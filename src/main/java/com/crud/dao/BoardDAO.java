@@ -14,8 +14,8 @@ public class BoardDAO {
 	Connection conn = null;
 	PreparedStatement stmt = null;
 	ResultSet rs = null;
-	private final String BOARD_INSERT = "insert into BOARD (category,photo,title, writer, content) values (?,?,?,?,?)";
-	private final String BOARD_UPDATE = "update BOARD set category=?, photo=?, title=?, writer=?, content=? where seq=?";
+	private final String BOARD_INSERT = "insert into BOARD (category,photo,title, writer, content,editdate) values (?,?,?,?,?,current_timestamp)";
+	private final String BOARD_UPDATE = "update BOARD set category=?, photo=?, title=?, writer=?, content=?, editdate=current_timestamp where seq=?";
 	private final String BOARD_DELETE = "delete from BOARD  where seq=?";
 	private final String BOARD_GET = "select * from BOARD  where seq=?";
 	private final String BOARD_LIST = "select * from BOARD order by seq desc";
@@ -113,6 +113,7 @@ public class BoardDAO {
 				one.setWriter(rs.getString("writer"));
 				one.setContent(rs.getString("content"));
 				one.setRegdate(rs.getDate("regdate"));
+				one.setEditDate(rs.getDate("editdate"));
 				one.setCnt(rs.getInt("cnt"));
 				list.add(one);
 			}
